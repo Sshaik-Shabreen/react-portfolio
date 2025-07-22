@@ -1,5 +1,5 @@
  // src/App.jsx
-import About from "./components/About";
+ import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
@@ -11,9 +11,11 @@ import ParticlesBackground from "./components/ParticlesBackground";
 
 function App() {
   return (
-    <div className="relative scroll-smooth flex">
+    <div className="relative scroll-smooth flex min-h-screen bg-gray-50 text-gray-900">
       {/* Particle Background */}
-      <ParticlesBackground />
+      <div className="absolute inset-0 -z-10">
+        <ParticlesBackground />
+      </div>
 
       {/* Sidebar (Fixed Left) */}
       <aside className="fixed top-0 left-0 h-full w-[250px] bg-white shadow-md z-50">
@@ -23,7 +25,7 @@ function App() {
       {/* Main Content Area */}
       <div className="flex-1 ml-[250px] relative z-10">
         {/* Hero section */}
-        <section id="hero">
+        <section id="hero" className="min-h-screen flex items-center justify-center">
           <Hero />
         </section>
 
@@ -41,6 +43,7 @@ function App() {
 }
 
 export default App;
+
 // src/App.jsx
 // import React from "react";
 // import Particles from "@tsparticles/react";
